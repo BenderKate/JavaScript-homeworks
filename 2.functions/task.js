@@ -33,12 +33,14 @@ function worker(arr) {
   return sum;
 }
 
-function makeWork(arrOfArr, func) {
+function makeWork(arrOfArr, worker) {
   let max = -Infinity;
+  let sumOfArr = [];
 
   for (let i = 0; i < arrOfArr.length; i++) {
-    if (funk(arrOfArr[i]) > max) {
-      max = funk(arrOfArr[i])
+    sumOfArr[i] = worker(arrOfArr[i]);
+    if (sumOfArr > max) {
+      max = sumOfArr[i];
     }
   }
   return max;
@@ -48,19 +50,35 @@ function makeWork(arrOfArr, func) {
 
 // Задание 3
 function worker2(arr) {
-  let min = arr[0];
+  let min = Infinity;
   let max = -Infinity;
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max) {
       max = arr[i];
     }
-    if (arr[i] <= min) {
+    if (arr[i] < min) {
       min = arr[i];
     } 
   }
   return Math.abs(min - max);
 }
+
+function makeWork(arrOfArr, worker2) {
+  let max = -Infinity;
+  let differenceOfArrs = [];
+
+  for (let i = 0; i < arrOfArr.length; i++) {
+    differenceOfArrs[i] = worker2(arrOfArr[i]);
+    if (differenceOfArrs[i] > max) {
+      max = differenceOfArrs[i];
+    }
+  }
+  return max;
+}
+
+
+
 
 
 
