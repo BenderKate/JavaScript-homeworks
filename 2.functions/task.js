@@ -33,18 +33,19 @@ function worker(arr) {
   return sum;
 }
 
-function makeWork(arrOfArr, worker) {
+function makeWork(arrOfArr, func) {
   let max = -Infinity;
-  let sumOfArr = [];
+  let value = [];
 
   for (let i = 0; i < arrOfArr.length; i++) {
-    sumOfArr[i] = worker(arrOfArr[i]);
-    if (sumOfArr > max) {
-      max = sumOfArr[i];
+    value[i] = func(arrOfArr[i]);
+    if (value[i] > max) {
+      max = value[i];
     }
   }
   return max;
 }
+
 
 
 
@@ -64,18 +65,20 @@ function worker2(arr) {
   return Math.abs(min - max);
 }
 
-function makeWork(arrOfArr, worker2) {
-  let max = -Infinity;
-  let differenceOfArrs = [];
+// function makeWork(arrOfArr, func) {
+//   let max = -Infinity;
+//   let value = [];
 
-  for (let i = 0; i < arrOfArr.length; i++) {
-    differenceOfArrs[i] = worker2(arrOfArr[i]);
-    if (differenceOfArrs[i] > max) {
-      max = differenceOfArrs[i];
-    }
-  }
-  return max;
-}
+//   for (let i = 0; i < arrOfArr.length; i++) {
+//     value[i] = func(arrOfArr[i]);
+//     if (value[i] > max) {
+//       max = value[i];
+//     }
+//   }
+//   return max;
+// }
+
+
 
 
 
