@@ -65,18 +65,6 @@ function worker2(arr) {
   return Math.abs(min - max);
 }
 
-// function makeWork(arrOfArr, func) {
-//   let max = -Infinity;
-//   let value = [];
-
-//   for (let i = 0; i < arrOfArr.length; i++) {
-//     value[i] = func(arrOfArr[i]);
-//     if (value[i] > max) {
-//       max = value[i];
-//     }
-//   }
-//   return max;
-// }
 
 
 
