@@ -22,7 +22,6 @@ class PrintEditionItem {
         } else {
             this._state = persent; 
         }
-        return this._state = persent;
     }
 
     get state() {
@@ -83,14 +82,16 @@ class Library {
     }
 
     addBook(book) {
-        if (state > 30) {
+        if (book.state > 30) {
             this.books.push(book);
         }
-        return this.books;
     }
 
     findBookBy(type, value) {
-        // Доделать код
+        for (let i = 0; i < this.books.length; i++) {
+            if (this.books[i][type] === value) return this.books[i];
+        }
+        return null;
     }
 
     giveBookByName(bookName) {
